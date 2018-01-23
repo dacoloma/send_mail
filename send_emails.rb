@@ -37,4 +37,5 @@ def get_the_email_html
 
 end
 
+#Fais appel à la constante WS qui correspond à mon worksheet dans le fichier scrapping.rb
 go_through_all_the_lines(Scrap::WS)
