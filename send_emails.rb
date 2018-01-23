@@ -6,7 +6,7 @@ Dotenv.load
 
 #En paramètre : nom de la ville, @email
 def send_email_to_line(town,mail)
-    Gmail.connect(ENV['email'],ENV['pass']) do |gmail|
+    Gmail.connect(ENV['EMAIL'],ENV['PASS']) do |gmail|
 
         gmail.deliver do
             to mail
