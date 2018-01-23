@@ -67,6 +67,5 @@ URL_VAL_DE_MARNE= "https://www.annuaire-des-mairies.com/val-de-marne.html"
 
 get_all_the_urls_of_val_de_marne_townhalls(URL_VAL_DE_MARNE)
 put_in_spreadsheet(WS,get_all_the_urls_of_val_de_marne_townhalls(URL_VAL_DE_MARNE))
-#put_in_json(get_all_the_urls_of_val_de_marne_townhalls(URL_VAL_DE_MARNE))
-#put_in_csv(get_all_the_urls_of_val_de_marne_townhalls(URL_VAL_DE_MARNE))
+
 end

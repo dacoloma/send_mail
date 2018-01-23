@@ -1,26 +1,13 @@
 require 'gmail'
 require 'dotenv'
-#require './scrapping'
+require './scrapping'
 
-#$LOAD_PATH << File.dirname("/Users/danielcoloma/Desktop/THP/RepoGit/send_mail/scrapping.rb")
-#print $LOAD_PATH
-
-
-#include Scrap
-=begin
-class Object
-  def to_imap_date
-    date = respond_to?(:utc) ? utc.to_s : to_s
-    Date.parse(date).strftime('%d-%b-%Y')
-  end
-end
-=end
 Dotenv.load
 
 #En paramètre : nom de la ville, @email
 def send_email_to_line(town,mail)
     Gmail.connect(ENV['email'],ENV['pass']) do |gmail|
-        #puts gmail.inbox.count(:unread)
+
         gmail.deliver do
             to mail
             subject "Formation gratuite : The Hacking Project"
@@ -49,6 +36,5 @@ end
 def get_the_email_html
 
 end
-
 
 go_through_all_the_lines(Scrap::WS)
