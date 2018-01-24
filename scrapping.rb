@@ -6,6 +6,10 @@ require 'json'
 require 'pp'
 require 'csv'
 require 'pry'
+require 'dotenv'
+
+
+Dotenv.load
 
 
 #récupère l'adresse email à partir de l'url d'une mairie
@@ -57,9 +61,9 @@ module Scrap
     #ouverture de session googledrive avec les clés
     SESSION = GoogleDrive::Session.from_config("config.json")
 
-    #Ouverture du fichier correspondant à la clé 1rgw...., worksheet 2
-    SHEET = SESSION.spreadsheet_by_key("1OfQxnGoIOkB05aLhEVapIO68qU7LYpls4cEr3EUcRHo")
-    #sheet.add_worksheet("Route de la mairie")
+    #Ouverture du fichier via sa clé
+    SHEET = SESSION.spreadsheet_by_key(ENV['SPREADSHEET_KEY'])
+    #Sélection de la première feuille de calcul
     WS= SHEET.worksheets[0]
 
 
